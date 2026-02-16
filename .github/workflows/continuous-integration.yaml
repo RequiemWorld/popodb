@@ -10,7 +10,7 @@ jobs:
       - name: "install python 3.13"
         uses: actions/setup-python@v6
         with:
-          version: 3.13
+          python-version: 3.13
       - name: "install tox for running tests"
         run: pip install tox
       - name: "test package against python3.13"
