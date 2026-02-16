@@ -7,7 +7,7 @@ jobs:
   run-continuous-integration:
     uses: ./.github/workflows/continuous-integration.yaml
     with:
-      wheel-artifact-name: w
+      wheels-artifact-name: w
   prepare-to-continuously-deliver:
     needs: [run-continuous-integration]
     runs-on: "ubuntu-latest"
