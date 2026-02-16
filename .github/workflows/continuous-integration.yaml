@@ -1,0 +1,17 @@
+on:
+  workflow_call:
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout repository"
+        uses: @actions/checkout@v5
+      - name: "install python 3.13"
+        uses: @actions/setup-python@v6
+        with:
+          version: 3.13
+      - name: "install tox for running tests"
+        run: pip install tox
+      - name: "test package against python3.13"
+        run: tox run -e python313
