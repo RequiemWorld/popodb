@@ -21,7 +21,7 @@ jobs:
       - name: "test package against python3.13"
         run: tox run -e python313
       - name: "upload binary wheel distribution files"
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.wheels-artifact-name }}
           path: .tox/.pkg/dist/
