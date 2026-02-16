@@ -6,4 +6,4 @@ on:
 jobs:
   prepare-to-continuously-deliver:
     name: "run through continuous integration"
-    uses: ./continuous-integration.yaml
+    uses: ./.github/workflows/continuous-integration.yaml
