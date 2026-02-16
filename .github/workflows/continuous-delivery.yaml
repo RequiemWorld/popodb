@@ -10,6 +10,8 @@ jobs:
     permissions:
       id-token: write  # required for trusted publishing
     steps:
+      - name: "checkout repository so that the workflows are accessible"
+        uses: actions/checkout@v5
       - name: "run through continuous integration"
         uses: ./.github/workflows/continuous-integration.yaml
       - name: "publish package to pypi on tagged commit"
