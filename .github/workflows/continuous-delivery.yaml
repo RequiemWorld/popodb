@@ -1,0 +1,9 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prepare-to-continuously-deliver:
+    name: "run through continuous integration"
+    uses: ./continuous-integration.yaml
