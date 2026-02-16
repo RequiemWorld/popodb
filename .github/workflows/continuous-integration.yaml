@@ -1,5 +1,9 @@
 on:
   workflow_call:
+    inputs:
+      wheels-artifact-name:
+        required: true
+        type: string
 
 jobs:
   run-unit-tests:
@@ -13,5 +17,11 @@ jobs:
           python-version: 3.13
       - name: "install tox for running tests"
         run: pip install tox
+      # tox should be setup to use wheels/the .pkg directory for all python versions
       - name: "test package against python3.13"
         run: tox run -e python313
+      - name: "upload binary wheel distribution files"
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ inputs.wheels-artifact-name }}
+          path: .tox/.pkg/dist/
