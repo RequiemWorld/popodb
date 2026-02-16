@@ -7,7 +7,7 @@ jobs:
   run-continuous-integration:
     uses: ./continuous-integration.yaml
   prepare-to-continuously-deliver:
-    needs: [runs-continuous-integration]
+    needs: [run-continuous-integration]
     runs-on: "ubuntu-latest"
     environment: pypi
     permissions:
