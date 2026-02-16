@@ -5,7 +5,7 @@ on:
 
 jobs:
   run-continuous-integration:
-    uses: ./continuous-integration.yaml
+    uses: ./.github/workflows/continuous-integration.yaml
   prepare-to-continuously-deliver:
     needs: [run-continuous-integration]
     runs-on: "ubuntu-latest"
