@@ -11,7 +11,7 @@ jobs:
       wheels-artifact-name: wheel-dists
   continuously-deliver:
     name: Continuous Delivery
-    needs: [run-continuous-integration]
+    needs: [continuously-integrate]
     runs-on: "ubuntu-latest"
     environment: pypi
     permissions:
