@@ -20,7 +20,7 @@ jobs:
       - name: "download wheels directory artifact made in CI"
         uses: actions/download-artifact@v4
         with:
-          name: wheels-dist
+          name: wheel-dists
           # gh-action-pypi-publish searches for the wheels here
           path: dist/
       - name: "publish package to pypi on tagged commit"
