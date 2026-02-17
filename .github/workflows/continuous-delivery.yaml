@@ -17,7 +17,7 @@ jobs:
     permissions:
       id-token: write  # required for trusted publishing
     steps:
-      - name: "checkout repository so that the package is relesable"
+      - name: "checkout repository so that the package is releasable"
         uses: actions/checkout@v5
       - name: "download wheels directory artifact made in CI"
         uses: actions/download-artifact@v4
