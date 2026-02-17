@@ -5,6 +5,7 @@ on:
 
 jobs:
   run-continuous-integration:
+    name: Continuous Integration
     uses: ./.github/workflows/continuous-integration.yaml
     with:
       wheels-artifact-name: wheel-dists
