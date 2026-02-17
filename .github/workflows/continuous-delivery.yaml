@@ -4,12 +4,12 @@ on:
       - main
 
 jobs:
-  run-continuous-integration:
+  continuously-integrate:
     name: Continuous Integration
     uses: ./.github/workflows/continuous-integration.yaml
     with:
       wheels-artifact-name: wheel-dists
-  prepare-to-continuously-deliver:
+  continuously-deliver:
     name: Continuous Delivery
     needs: [run-continuous-integration]
     runs-on: "ubuntu-latest"
