@@ -10,6 +10,7 @@ jobs:
     with:
       wheels-artifact-name: wheel-dists
   prepare-to-continuously-deliver:
+    name: Continuous Delivery
     needs: [run-continuous-integration]
     runs-on: "ubuntu-latest"
     environment: pypi
