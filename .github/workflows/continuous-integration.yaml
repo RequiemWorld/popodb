@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.wheels-artifact-name }}
-          path: /.tox/.pkg/dist/
+          path: ${{ github.workspace }}/.tox/.pkg/dist
