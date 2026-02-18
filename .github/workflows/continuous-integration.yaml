@@ -4,7 +4,9 @@ on:
       wheels-artifact-name:
         required: true
         type: string
-
+  push:
+    branches:
+      - main
 jobs:
   run-unit-tests:
     runs-on: ubuntu-latest
