@@ -2,7 +2,7 @@ on:
   workflow_call:
     inputs:
       wheels-artifact-name:
-        required: true
+        required: false
         type: string
   push:
     branches:
@@ -27,3 +27,4 @@ jobs:
         with:
           name: ${{ inputs.wheels-artifact-name }}
           path: ${{ github.workspace }}/.tox/.pkg/dist
+        if: ${{ inputs.wheels-artifact-name != '' }}
