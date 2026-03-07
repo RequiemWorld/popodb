@@ -1,14 +1,9 @@
 on:
-  workflow_call:
-    inputs:
-      wheels-artifact-name:
-        required: false
-        type: string
   push:
     branches:
       - main
 jobs:
-  run-unit-tests:
+  continuous-integration:
     runs-on: ubuntu-latest
     steps:
       - name: "checkout repository"
@@ -25,6 +20,5 @@ jobs:
       - name: "upload binary wheel distribution files"
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.wheels-artifact-name }}
+          name: ${{ github.sha }}
           path: ${{ github.workspace }}/.tox/.pkg/dist
-        if: ${{ inputs.wheels-artifact-name != '' }}
