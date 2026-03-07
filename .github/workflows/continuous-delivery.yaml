@@ -16,8 +16,10 @@ jobs:
       - name: "checkout repository so that the package is releasable"
         uses: actions/checkout@v5
       - name: "download wheels directory artifact made in CI"
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit: ${{ github.sha }}
           name: ${{ github.sha }}
           # gh-action-pypi-publish searches for the wheels here
           path: dist/
