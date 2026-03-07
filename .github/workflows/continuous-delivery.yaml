@@ -22,6 +22,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit: ${{ github.sha }}
           name: ${{ github.sha }}
+          ref: refs/heads/*
           # gh-action-pypi-publish searches for the wheels here
           path: dist/
       - name: "publish package to pypi"
