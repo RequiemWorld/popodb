@@ -2,7 +2,7 @@ on:
   push:
     tags:
       # any tag starting with v.x.x.x
-      - "v[0-9].[0-9]+.[0-9]+"
+      - "v*.*.*"
 jobs:
   continuously-deliver:
     # A manual process, if there is an artifact for the commit that
