@@ -18,6 +18,7 @@ jobs:
       - name: "download wheels directory artifact made in CI"
         uses: dawidd6/action-download-artifact@v3
         with:
+          workflow: continuous-integration.yaml
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit: ${{ github.sha }}
           name: ${{ github.sha }}
